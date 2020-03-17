@@ -2,8 +2,6 @@ package com.mybatis.po;
 
 public class Customer {
     private String id;
-
-
     private String username;
     private String jobs;
     private  String phone;

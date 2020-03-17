@@ -9,4 +9,17 @@
     <select id="findCustomer" resultType="com.mybatis.po.Customer">
         SELECT * FROM customer
     </select>
+    <insert id="insertCustomer" parameterType="com.mybatis.po.Customer" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO customer (username, jobs, phone) VALUES (#{username},#{jobs},#{phone})
+    </insert>
+
+    <update id="updateCustomer" parameterType="com.mybatis.po.Customer">
+        UPDATE customer SET username=#{username} WHERE id=#{id}
+    </update>
+
+    <delete id="delCustomer" parameterType="Integer">
+        DELETE FROM customer WHERE id=#{id}
+    </delete>
+
+
 </mapper>

@@ -13,7 +13,7 @@ public class MybatisTest {
     public void findCustomerByIdTest() throws Exception {
         SqlSession sqlSession = MyBatisUtil.getSqlSession();
         //执行映射文件中定义的sql语句，并返回映射的结果集
-        Customer customer = sqlSession.selectOne("com.mybatis.mapper.CustomerMapper.findCustomerByid", 1);
+        Customer customer = sqlSession.selectOne("com.mybatis.mapper.CustomerMapper.findCustomerById", 1);
         System.out.print(customer);
         sqlSession.close();
     }
