@@ -20,6 +20,59 @@
     <delete id="delCustomer" parameterType="Integer">
         DELETE FROM customer WHERE id=#{id}
     </delete>
+    <select id="dynamicSelectCustomer"  resultType="com.mybatis.po.Customer">
+        SELECT * FROM customer where 1=1
+        <if test="username != null and username !=''">
+            <bind name="name1" value="'%'+username+'%'" />
+            AND username LIKE #{name1}
+        </if>
+        <if test="jobs != null and jobs !=''">
+            AND jobs=#{jobs}
+        </if>
+    </select>
 
+    <select id="chooseCustomer"  resultType="com.mybatis.po.Customer">
+        SELECT * FROM customer
+        WHERE 1=1
+
+        <choose>
+            <when test="username != null and username!=''">
+                <bind name="name1" value="'%'+username+'%'" />
+                AND username LIKE #{name1}
+            </when>
+            <when test="jobs != null and jobs!=''">
+                AND jobs=#{jobs}
+            </when>
+            <otherwise>
+               AND phone is NOT NULL
+            </otherwise>
+        </choose>
+
+
+    </select>
+    <update id="setCustomer">
+        UPDATE customer
+        <set>
+            <if  test="username != null and username!=''">
+                username = #{username},
+            </if>
+            <if test="jobs != null and jobs !=''">
+                 jobs=#{jobs},
+            </if>
+            <if test="phone != null and phone !=''">
+                phone=#{phone},
+            </if>
+
+        </set>
+        WHERE id=#{id}
+    </update>
+    <select id="foreach" resultType="com.mybatis.po.Customer">
+        SELECT * FROM customer
+        WHERE id IN
+        <foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+
+    </select>
 
 </mapper>

@@ -49,7 +49,7 @@ public class MyBatisTest2 {
         SqlSession sqlSession = MyBatisUtil.getSqlSession();
         CustomerMapper customerMapper = sqlSession.getMapper(CustomerMapper.class);
         Customer customer = new Customer();
-        customer.setId("11");
+        customer.setId(11);
         customer.setUsername("修改");
         customerMapper.updateCustomer(customer);
         sqlSession.commit();

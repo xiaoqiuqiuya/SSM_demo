@@ -1,17 +1,17 @@
 package com.mybatis.po;
 
 public class Customer {
-    private String id;
+    private int id;
     private String username;
     private String jobs;
     private  String phone;
 
-    public String getJobs() {
-        return jobs;
+    public int getId() {
+        return id;
     }
 
-    public void setJobs(String jobs) {
-        this.jobs = jobs;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -22,6 +22,14 @@ public class Customer {
         this.username = username;
     }
 
+    public String getJobs() {
+        return jobs;
+    }
+
+    public void setJobs(String jobs) {
+        this.jobs = jobs;
+    }
+
     public String getPhone() {
         return phone;
     }
@@ -29,18 +37,11 @@ public class Customer {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     @Override
     public String toString() {
         return "Customer{" +
-                "id='" + id + '\'' +
+                "id=" + id +
                 ", username='" + username + '\'' +
                 ", jobs='" + jobs + '\'' +
                 ", phone='" + phone + '\'' +
