@@ -2,6 +2,17 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING" />
+    </settings>
+
+    <!--别名-->
+    <typeAliases>
+        <typeAlias type="com.mybatis.po.Person" alias="person" />
+        <typeAlias type="com.mybatis.po.IdCard" alias="IdCard"/>
+    </typeAliases>
+
     <!--1.配置环境 ，默认的环境id为mysql-->
     <environments default="mysql">
         <!--1.2.配置id为mysql的数据库环境 -->
@@ -20,5 +31,7 @@
     <!--2.配置Mapper的位置 -->
   <mappers>
       <mapper resource="CustomerMapper.xml"/>
+      <mapper resource="IdCardMapper.xml"/>
+      <mapper resource="PersonMapper.xml"/>
   </mappers>
 </configuration>
