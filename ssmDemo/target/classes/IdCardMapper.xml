@@ -5,7 +5,7 @@
     <select id="findByIdCard" parameterType="Integer" resultType="com.mybatis.po.IdCard">
         SELECT * FROM
         idcard
-        WHERE id=#{idCode}
+        WHERE id=#{idCard}
     </select>
 
 

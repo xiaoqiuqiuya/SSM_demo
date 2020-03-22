@@ -15,7 +15,7 @@ public class MyBatisTest6 {
         SqlSession sqlSession = MyBatisUtil.getSqlSession();
         PersonMapper personMapper = sqlSession.getMapper(PersonMapper.class);
         Person person = new Person();
-        person.setPerson_id(2);
+        person.setPerson_id(1);
         Person person1 = personMapper.getPersonById(person);
         System.out.println(person1);
     }
