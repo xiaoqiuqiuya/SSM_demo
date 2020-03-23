@@ -9,5 +9,4 @@ public class Person {
     private int age;
     private String sex;
     private IdCard idCard;
-
 }

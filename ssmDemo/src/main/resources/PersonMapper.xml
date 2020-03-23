@@ -15,4 +15,22 @@
         select="com.mybatis.mapper.IdCardMapper.findByIdCard"></association>
     </resultMap>
 
+    <!--嵌套结果-->
+    <select id="getPersonById2" parameterType="person" resultMap="result">
+        SELECT p.*,c.*
+        FROM person AS  p ,idcard AS C 
+        WHERE p.person_id=#{person_id}
+        AND p.idCard=c.id
+    </select>
+    <resultMap id="result" type="person">
+        <id property="person_id" column="person_id" />
+        <result property="name" column="name"></result>
+        <result property="age" column="age"></result>
+        <result property="sex" column="sex"/>
+        <association property="idCard" column="idCard" javaType="com.mybatis.po.IdCard">
+            <id property="id" column="id"/>
+            <result property="code" column="code"/>
+        </association>
+    </resultMap>
+    
 </mapper>
