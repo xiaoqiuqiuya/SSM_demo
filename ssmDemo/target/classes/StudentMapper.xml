@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.mapper.StudentMapper">
+
+    <select id="getStudent" resultMap="students" parameterType="tClass">
+        SELECT c.id,c.name,s.*
+        FROM student AS s ,t_class AS c
+        WHERE c.id=#{id}
+        AND c.id=s.class_id
+    </select>
+    <resultMap id="students" type="tClass">
+        <id property="id" column="id" />
+        <result property="name" column="name"/>
+
+        <collection property="students" ofType="com.mybatis.po.Student">
+            <id property="sid" column="sid"/>
+            <result property="t_class" column="class_id"/>
+            <result property="sname" column="sname"/>
+        </collection>
+
+    </resultMap>
+
+    
+</mapper>

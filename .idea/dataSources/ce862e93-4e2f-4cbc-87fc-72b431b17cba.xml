@@ -833,90 +833,155 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="212" parent="7" name="customer">
+    <table id="212" parent="7" name="course">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="213" parent="7" name="customer">
       <Engine>InnoDB</Engine>
       <Collation>utf8_general_ci</Collation>
     </table>
-    <table id="213" parent="7" name="idcard">
+    <table id="214" parent="7" name="idcard">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="214" parent="7" name="person">
+    <table id="215" parent="7" name="person">
       <Engine>InnoDB</Engine>
     </table>
-    <column id="215" parent="212" name="id">
+    <table id="216" parent="7" name="student">
+      <Engine>InnoDB</Engine>
+    </table>
+    <table id="217" parent="7" name="t_class">
+      <Engine>InnoDB</Engine>
+    </table>
+    <column id="218" parent="212" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="216" parent="212" name="username">
+    <column id="219" parent="212" name="name">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="217" parent="212" name="jobs">
-      <Position>3</Position>
-      <DataType>varchar(20)|0</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="218" parent="212" name="phone">
-      <Position>4</Position>
-      <DataType>varchar(20)|0</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="219" parent="212" name="PRIMARY">
+    <key id="220" parent="212" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="220" parent="213" name="id">
+    <column id="221" parent="213" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="221" parent="213" name="code">
+    <column id="222" parent="213" name="username">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="222" parent="213" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="223" parent="214" name="person_id">
-      <Position>1</Position>
-      <DataType>int(20)|0</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="224" parent="214" name="name">
-      <Position>2</Position>
-      <DataType>varchar(20)|0</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="225" parent="214" name="age">
+    <column id="223" parent="213" name="jobs">
       <Position>3</Position>
-      <DataType>int(20)|0</DataType>
+      <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="226" parent="214" name="sex">
+    <column id="224" parent="213" name="phone">
       <Position>4</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="227" parent="214" name="idCard">
-      <Position>5</Position>
+    <key id="225" parent="213" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="226" parent="214" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="227" parent="214" name="code">
+      <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <key id="228" parent="214" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="229" parent="215" name="person_id">
+      <Position>1</Position>
+      <DataType>int(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="230" parent="215" name="name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="231" parent="215" name="age">
+      <Position>3</Position>
+      <DataType>int(20)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="232" parent="215" name="sex">
+      <Position>4</Position>
+      <DataType>varchar(20)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="233" parent="215" name="idCard">
+      <Position>5</Position>
+      <DataType>varchar(20)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="234" parent="215" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
       <ColNames>person_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="235" parent="216" name="sid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="236" parent="216" name="sname">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="237" parent="216" name="class_id">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="238" parent="216" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>sid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="239" parent="217" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="240" parent="217" name="name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="241" parent="217" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
   </database-model>

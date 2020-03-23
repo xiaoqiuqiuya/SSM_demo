@@ -9,6 +9,8 @@
 
     <!--别名-->
     <typeAliases>
+        <typeAlias type="com.mybatis.po.Student" alias="student"/>
+        <typeAlias type="com.mybatis.po.TClass" alias="tClass"/>
         <typeAlias type="com.mybatis.po.Person" alias="person" />
         <typeAlias type="com.mybatis.po.IdCard" alias="IdCard"/>
     </typeAliases>
@@ -33,5 +35,6 @@
       <mapper resource="CustomerMapper.xml"/>
       <mapper resource="IdCardMapper.xml"/>
       <mapper resource="PersonMapper.xml"/>
+      <mapper resource="StudentMapper.xml"/>
   </mappers>
 </configuration>
