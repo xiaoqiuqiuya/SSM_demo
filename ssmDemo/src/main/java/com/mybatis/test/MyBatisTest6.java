@@ -36,11 +36,18 @@ public class MyBatisTest6 {
         SqlSession sqlSession = MyBatisUtil.getSqlSession();
         StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
         TClass tClass = new TClass();
-        tClass.setId(1);
+        tClass.setClass_id(2);
         TClass tClass1 = studentMapper.getStudent(tClass);
         System.out.println(tClass1);
 
     }
-
-
+    @Test//多对多   查询学生课程
+    public void test4(){
+        SqlSession sqlSession = MyBatisUtil.getSqlSession();
+        StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
+        Student student = new Student();
+        student.setStudent_id(1);
+        Student student1 = studentMapper.getStudentCourse(student);
+        System.out.println(student1);
+    }
 }

@@ -3,19 +3,39 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mybatis.mapper.StudentMapper">
 
+    <!--一对多-->
     <select id="getStudent" resultMap="students" parameterType="tClass">
-        SELECT c.id,c.name,s.*
+        SELECT c.class_id,c.class_name,s.*
         FROM student AS s ,t_class AS c
-        WHERE c.id=#{id}
-        AND c.id=s.class_id
+        WHERE c.class_id=#{class_id}
+        AND c.class_id=s.class_id
     </select>
     <resultMap id="students" type="tClass">
-        <id property="id" column="id" />
-        <result property="name" column="name"/>
+        <id property="class_id" column="class_id" />
+        <result property="class_name" column="class_name"/>
         <collection property="students" ofType="com.mybatis.po.Student">
-            <id property="sid" column="sid"/>
-            <result property="t_class" column="class_id"/>
-            <result property="sname" column="sname"/>
+            <id property="student_id" column="student_id"/>
+            <result property="class_id" column="class_id"/>
+            <result property="student_name" column="student_name"/>
         </collection>
     </resultMap>
+
+    <!--多对多-->
+
+    <select id="getStudentCourse" resultMap="studentCourse" parameterType="student">
+        SELECT s.*,c.*
+        FROM student AS s ,course AS c,t_student_course AS tsc
+        WHERE s.student_id=#{student_id}
+        AND tsc.student_id=s.student_id
+        AND c.course_id=tsc.course_id
+    </select>
+    <resultMap id="studentCourse" type="com.mybatis.po.Student">
+        <id column="student_id" property="student_id"/>
+        <result property="student_name" column="student_name"/>
+        <collection property="courses" ofType="com.mybatis.po.Course">
+            <id property="course_id" column="course_id"/>
+            <result property="course_name" column="course_name"/>
+        </collection>
+    </resultMap>
+
 </mapper>

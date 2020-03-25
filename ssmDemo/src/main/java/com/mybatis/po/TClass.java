@@ -6,8 +6,8 @@ import java.util.List;
 
 @Data
 public class TClass {
-    private int id;
-    private String name;
+    private int class_id;
+    private String class_name;
 
     private List<Student> students;
 }
